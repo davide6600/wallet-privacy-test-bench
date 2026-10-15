@@ -12,16 +12,10 @@
 
 ## 2. Reporting a Vulnerability
 
-We take the security of this testing harness and its data models seriously. If you discover a security vulnerability or potential data leak in the harness:
+We take the security of this testing harness and its data models seriously. If you discover a security vulnerability or potential data leak:
 
-### Preferred Method: GitHub Private Vulnerability Reporting
-Please do **NOT** open a public issue. Instead, submit a private report using GitHub's built-in Private Vulnerability Reporting:
-1. Navigate to the [Security Advisories](https://github.com/davide6600/wallet-privacy-test-bench/security/advisories/new) tab on this repository.
-2. Click **"Report a vulnerability"** to open a confidential disclosure report.
-3. Provide a clear description of the vulnerability, reproduction steps, and any suggested patch.
+1. Please do **NOT** open a public issue.
+2. Submit a confidential report using GitHub's built-in **[Private Vulnerability Reporting](https://github.com/davide6600/wallet-privacy-test-bench/security/advisories/new)** under the Security tab of this repository.
+3. Provide a clear description of the vulnerability, steps to reproduce, and any suggested remediation.
 
-### Alternative Contact
-If you cannot use GitHub Security Advisories, you may reach the maintainer via the privacy-preserving GitHub contributor address:
-- **Contact:** `39161933+davide6600@users.noreply.github.com`
-
-We will acknowledge receipt within 48–72 hours and provide an estimated timeline for verification and remediation.
+All private security advisories are reviewed promptly, and an initial response will be provided within 48–72 hours.
