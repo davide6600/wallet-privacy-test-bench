@@ -8,7 +8,8 @@ version = "0.1.0"
 description = "Reproducible network-privacy regression testing harness for Bitcoin wallets"
 readme = "README.md"
 authors = [{ name = "Davide De Carlo" }]
-license = { text = "Apache-2.0" }
+license = "Apache-2.0"
+license-files = ["LICENSE"]
 requires-python = ">=3.10"
 dependencies = [
     "jsonschema>=4.20.0"
@@ -23,7 +24,11 @@ dev = [
 [project.scripts]
 wallet-privacy-test = "harness.runner:main"
 
+[tool.setuptools.packages.find]
+include = ["harness*", "adapters*"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
