@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RunAttestationSchema",
+  "description": "Attestazione crittografica e di provenienza dell'esecuzione del test di privacy.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "test_run_id",
+    "executed_at",
+    "harness_git_commit",
+    "harness_clean_worktree",
+    "tested_artifact",
+    "environment",
+    "output_hashes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": ["1.0.0"]
+    },
+    "test_run_id": {
+      "type": "string"
+    },
+    "executed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "harness_git_commit": {
+      "type": "string"
+    },
+    "harness_clean_worktree": {
+      "type": "boolean"
+    },
+    "tested_artifact": {
+      "type": "object",
+      "required": ["name", "version", "binary_sha256"],
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "binary_path": { "type": "string" },
+        "binary_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-fA-F]{64}$"
+        },
+        "source_repository": { "type": "string" }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "required": ["os", "python_version", "docker_version"],
+      "properties": {
+        "os": { "type": "string" },
+        "python_version": { "type": "string" },
+        "docker_version": { "type": "string" }
+      }
+    },
+    "output_hashes": {
+      "type": "object",
+      "required": ["ground_truth_sha256", "observed_events_sha256", "findings_sha256"],
+      "properties": {
+        "ground_truth_sha256": { "type": "string" },
+        "observed_events_sha256": { "type": "string" },
+        "findings_sha256": { "type": "string" }
+      }
+    }
+  }
+}

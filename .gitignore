@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.venv/
+env/
+
+# Pytest & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Artifacts & Temporary Lab Data (keep directory structure)
+artifacts/sandbox/
+*.log
+*.pcap
+*.pcapng
+
+# Local grant, backups and private files
+grant/
+local_*/
+*.bak
+*.private.*
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

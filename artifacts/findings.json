@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0.0",
+  "test_run_id": "run-ffb404f4",
+  "generated_at": "2026-10-15T13:53:47.300109+00:00",
+  "scenario_name": "restore-and-sync",
+  "wallet_name": "Electrum (Regtest Headless)",
+  "wallet_version": "4.5.x-cli",
+  "verdict": "BASELINE_OBSERVATION",
+  "metrics": {
+    "total_canary_scripts": 30,
+    "observed_canary_scripts": 20,
+    "script_disclosure_ratio": 0.6667,
+    "distinct_sessions_count": 1,
+    "cluster_size_max": 20
+  },
+  "findings": [
+    {
+      "finding_id": "FIND-001",
+      "rule_code": "RULE-SCRIPT-CLUSTER",
+      "severity": "MEDIUM",
+      "title": "Canary Address Clustering via Shared TCP Session",
+      "description": "The backend observed 20 distinct canary scripts within the same persistent TCP session [sess-09b47466], enabling the server to cluster all queried addresses to the same wallet entity.",
+      "evidence": {
+        "session_id": "sess-09b47466",
+        "cluster_size": 20,
+        "queried_scripthashes": [
+          "0f2af7f0b0b158de3f88c85e98fc9927e4c0d955748d5adddf6842260f3c650d",
+          "43c1e226957bebecb376c5bf5ad931fb23fb399fc678afdcea440c91cd511a37",
+          "ba58d9e28982393ecac009f726a14794b209fb8b8d1fb73150d43c54168edb85",
+          "a351959cab7cc7c21fe90512bae8a431c403764af5d19a16722d6acd72e71975",
+          "a3d33f0852f0b3871574241f54dd1c807db2805d28b5f3b4f48c1194ab09b228",
+          "5608474d88b06f43e8fff1bc06bf2b5c98389878e944f9de7b94c95b594dada0",
+          "3af08a575d8f3e90b2ad48baceac87be68441589c5a7eb8499e4e58da5459a28",
+          "121bdc38b70b9b15126824aa2590697b414693f1a1cced6656c8038e987454a2",
+          "d90497e915485f851d5f32dcf55bc92e579cc647897f9942a4ddd8f59bf8f3d2",
+          "cf79ac02079f991f62013a70705027afaf0ba369ec93c4511c4de2986dc49ffd",
+          "4b07d8ca1002458ab14a1073acc928cf64f39376037776511af95702a4ce2aa0",
+          "4e0fd4bc35430e87473212aff95dd73e38e74de191eeba2aa119297e43473cd8",
+          "6463aad08fa17c88319f96dd32637cb942950c5f88791955be8da91c99dd21c7",
+          "14506669676f330ca467a16a6342a4ca45a91977da3c2680e04f07848ad2b165",
+          "8a180d1ea6312a557938476130936249861a04759498c36cfa7f9d5954d840de",
+          "579ef69355aa02ac7c4d650839f7350aba356809115fc666065bac76fdc08e92",
+          "0b9d40cd26e899daa9250f2b8beb77e803ac89eb2f06f55a1a0fad648856612f",
+          "780a7e96204e9feacc105f6b73ae161db8884d2d845cdf64a23e8e49594a6e66",
+          "c376c30b225ac5032f817404c0cc32e9df7be621c17fafa661c97610ff870c87",
+          "499ac37a9f1f34fd9c7d71b70f6837332a234cd04b3307349eb3a72d028b4e41"
+        ]
+      },
+      "reconciled_ground_truth": {
+        "derivation_paths": [
+          "m/84'/1'/0'/0/4",
+          "m/84'/1'/0'/0/11",
+          "m/84'/1'/0'/0/18",
+          "m/84'/1'/0'/0/15",
+          "m/84'/1'/0'/0/19",
+          "m/84'/1'/0'/0/12",
+          "m/84'/1'/0'/0/2",
+          "m/84'/1'/0'/0/0",
+          "m/84'/1'/0'/0/10",
+          "m/84'/1'/0'/0/9",
+          "m/84'/1'/0'/0/3",
+          "m/84'/1'/0'/0/16",
+          "m/84'/1'/0'/0/5",
+          "m/84'/1'/0'/0/14",
+          "m/84'/1'/0'/0/13",
+          "m/84'/1'/0'/0/1",
+          "m/84'/1'/0'/0/17",
+          "m/84'/1'/0'/0/7",
+          "m/84'/1'/0'/0/8",
+          "m/84'/1'/0'/0/6"
+        ],
+        "addresses": [
+          "bcrt1q0s33pvw4py36hz58cm3kayqt73nm4ykh98j2hg",
+          "bcrt1qrhzskhttsuh5g8a2el9y8ymnsuypn8e90fryde",
+          "bcrt1qdpujvddur3gtkc024wt9e49x9e6389vnuk2je5",
+          "bcrt1qcp9reqdqshe29ncgy2cn0p84wlqnn393sjmnvz",
+          "bcrt1qy48g09j9x9he2ne3y3ec8jqgcrwesecc5vwpzk",
+          "bcrt1qsqzpv85yhejjcreej9s5qqjuadua5j0w3l47pl",
+          "bcrt1qfszfwgq0pfgsjs2ft59ss6c786v8g7pcw45ce4",
+          "bcrt1qr39u3rfhcggqt7lw02c35xw67q9ljra4pxrhsw",
+          "bcrt1q7p930ww2pu67d57jg98day84vp5m44sx5dq0ua",
+          "bcrt1qx0xnzfsrpwgjdnrhmr0xxhku03rsyjhmnqk0au",
+          "bcrt1quvhp9p28ht0lmrhvp0zakkatge042j37aggjh6",
+          "bcrt1qw00nzdyjllvuvjqw8dusung4v4ms87q0ju6xpg",
+          "bcrt1qekh37hwx3h9yducsy70scyxkgcu55kjxh7ux4x",
+          "bcrt1qwar9g0a2cny9muy57kl84fe3lcg96hpcdnqkwz",
+          "bcrt1qq44mrmne5uqsjgrn7ep5lfeffxsm6u8pyu52eg",
+          "bcrt1q4hgzzscdk5hm244ajvauxqwkfnsqnymdd3chfa",
+          "bcrt1qk5w4vvry86r9ch5du5zrq5kxp29usdp6wx2c4f",
+          "bcrt1q697y5tld5nqclsy0afqhesddhq0qkg9ckjg54v",
+          "bcrt1qml49zu20ez2zv9ekn3ur802g9pfwze86fsw2py",
+          "bcrt1q0a3zgqtu5rwn9mz3hg4gn650jj73nqjrqqgdml"
+        ]
+      }
+    },
+    {
+      "finding_id": "FIND-002",
+      "rule_code": "RULE-UNUSED-SCRIPT-PROBE",
+      "severity": "LOW",
+      "title": "Unused Canary Script Probing (Gap Limit Exposure)",
+      "description": "The wallet queried 18 canary addresses that never recorded transactions on-chain, exposing its gap-limit lookahead window to the backend indexer.",
+      "evidence": {
+        "count_unused_probed": 18,
+        "sample_scripthashes": [
+          "0f2af7f0b0b158de3f88c85e98fc9927e4c0d955748d5adddf6842260f3c650d",
+          "43c1e226957bebecb376c5bf5ad931fb23fb399fc678afdcea440c91cd511a37",
+          "ba58d9e28982393ecac009f726a14794b209fb8b8d1fb73150d43c54168edb85",
+          "a351959cab7cc7c21fe90512bae8a431c403764af5d19a16722d6acd72e71975",
+          "a3d33f0852f0b3871574241f54dd1c807db2805d28b5f3b4f48c1194ab09b228"
+        ]
+      },
+      "reconciled_ground_truth": {
+        "sample_addresses": [
+          "bcrt1q0s33pvw4py36hz58cm3kayqt73nm4ykh98j2hg",
+          "bcrt1qrhzskhttsuh5g8a2el9y8ymnsuypn8e90fryde",
+          "bcrt1qdpujvddur3gtkc024wt9e49x9e6389vnuk2je5",
+          "bcrt1qcp9reqdqshe29ncgy2cn0p84wlqnn393sjmnvz",
+          "bcrt1qy48g09j9x9he2ne3y3ec8jqgcrwesecc5vwpzk"
+        ],
+        "derivation_paths": [
+          "m/84'/1'/0'/0/4",
+          "m/84'/1'/0'/0/11",
+          "m/84'/1'/0'/0/18",
+          "m/84'/1'/0'/0/15",
+          "m/84'/1'/0'/0/19"
+        ]
+      }
+    },
+    {
+      "finding_id": "FIND-003",
+      "rule_code": "RULE-BROADCAST-LINKAGE",
+      "severity": "HIGH",
+      "title": "Transaction Broadcast Co-located with Address Sync Session",
+      "description": "The transaction was broadcast over TCP session [sess-09b47466], which was also used to query balance and history for 20 canary addresses, linking the payment originator directly to the wallet cluster.",
+      "evidence": {
+        "session_id": "sess-09b47466",
+        "associated_cluster_size": 20
+      },
+      "reconciled_ground_truth": {
+        "linked_addresses_sample": [
+          "bcrt1q0s33pvw4py36hz58cm3kayqt73nm4ykh98j2hg",
+          "bcrt1qrhzskhttsuh5g8a2el9y8ymnsuypn8e90fryde",
+          "bcrt1qdpujvddur3gtkc024wt9e49x9e6389vnuk2je5",
+          "bcrt1qcp9reqdqshe29ncgy2cn0p84wlqnn393sjmnvz",
+          "bcrt1qy48g09j9x9he2ne3y3ec8jqgcrwesecc5vwpzk"
+        ]
+      }
+    }
+  ]
+}

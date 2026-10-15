@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Finding Report - run-ffb404f4</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --accent: #38bdf8;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 24px;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }
+        .brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        h1 {
+            margin: 8px 0 4px 0;
+            font-size: 2rem;
+        }
+        .meta {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .metric-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+        .metric-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 4px;
+        }
+        .finding-card {
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border);
+        }
+        .finding-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        .badge {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .rule-code {
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .finding-id {
+            margin-left: auto;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .finding-title {
+            margin: 4px 0 8px 0;
+            font-size: 1.2rem;
+        }
+        .finding-desc {
+            color: #cbd5e1;
+            margin: 0 0 16px 0;
+        }
+        .code-blocks details {
+            background: #0f172a;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            margin-top: 8px;
+            padding: 8px 12px;
+        }
+        .code-blocks summary {
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        pre {
+            margin: 8px 0 0 0;
+            overflow-x: auto;
+            font-size: 0.8rem;
+            color: #e2e8f0;
+        }
+        footer {
+            margin-top: 40px;
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">Wallet Privacy Test Bench</div>
+            <h1>Executive Privacy Disclosure Report</h1>
+            <div class="meta">
+                Run ID: <strong>run-ffb404f4</strong> &bull; Scenario: <strong>restore-and-sync</strong> &bull; Wallet: <strong>Electrum (Regtest Headless) (4.5.x-cli)</strong> &bull; Date: 2026-10-15T13:53:47.300109+00:00
+            </div>
+        </header>
+
+        <section class="dashboard">
+            <div class="metric-box">
+                <div class="metric-label">Executive Verdict</div>
+                <div class="metric-value" style="color: #f59e0b;">BASELINE_OBSERVATION</div>
+            </div>
+            <div class="metric-box">
+                <div class="metric-label">Script Disclosure</div>
+                <div class="metric-value">66.7%</div>
+                <small style="color: var(--text-muted);">20 / 30 known scripts</small>
+            </div>
+            <div class="metric-box">
+                <div class="metric-label">Max Cluster Size</div>
+                <div class="metric-value">20</div>
+                <small style="color: var(--text-muted);">addresses per single session</small>
+            </div>
+            <div class="metric-box">
+                <div class="metric-label">Distinct TCP Sessions</div>
+                <div class="metric-value">1</div>
+                <small style="color: var(--text-muted);">communication channels</small>
+            </div>
+        </section>
+
+        <section class="findings">
+            <h2>Reconciled Findings (3)</h2>
+            
+        <div class="finding-card" style="border-left: 4px solid #eab308;">
+            <div class="finding-header">
+                <span class="badge" style="background: #eab308;">MEDIUM</span>
+                <span class="rule-code">RULE-SCRIPT-CLUSTER</span>
+                <span class="finding-id">FIND-001</span>
+            </div>
+            <h3 class="finding-title">Canary Address Clustering via Shared TCP Session</h3>
+            <p class="finding-desc">The backend observed 20 distinct canary scripts within the same persistent TCP session [sess-09b47466], enabling the server to cluster all queried addresses to the same wallet entity.</p>
+            
+            <div class="code-blocks">
+                <details>
+                    <summary>Observed Network Evidence</summary>
+                    <pre><code>{
+  &quot;session_id&quot;: &quot;sess-09b47466&quot;,
+  &quot;cluster_size&quot;: 20,
+  &quot;queried_scripthashes&quot;: [
+    &quot;0f2af7f0b0b158de3f88c85e98fc9927e4c0d955748d5adddf6842260f3c650d&quot;,
+    &quot;43c1e226957bebecb376c5bf5ad931fb23fb399fc678afdcea440c91cd511a37&quot;,
+    &quot;ba58d9e28982393ecac009f726a14794b209fb8b8d1fb73150d43c54168edb85&quot;,
+    &quot;a351959cab7cc7c21fe90512bae8a431c403764af5d19a16722d6acd72e71975&quot;,
+    &quot;a3d33f0852f0b3871574241f54dd1c807db2805d28b5f3b4f48c1194ab09b228&quot;,
+    &quot;5608474d88b06f43e8fff1bc06bf2b5c98389878e944f9de7b94c95b594dada0&quot;,
+    &quot;3af08a575d8f3e90b2ad48baceac87be68441589c5a7eb8499e4e58da5459a28&quot;,
+    &quot;121bdc38b70b9b15126824aa2590697b414693f1a1cced6656c8038e987454a2&quot;,
+    &quot;d90497e915485f851d5f32dcf55bc92e579cc647897f9942a4ddd8f59bf8f3d2&quot;,
+    &quot;cf79ac02079f991f62013a70705027afaf0ba369ec93c4511c4de2986dc49ffd&quot;,
+    &quot;4b07d8ca1002458ab14a1073acc928cf64f39376037776511af95702a4ce2aa0&quot;,
+    &quot;4e0fd4bc35430e87473212aff95dd73e38e74de191eeba2aa119297e43473cd8&quot;,
+    &quot;6463aad08fa17c88319f96dd32637cb942950c5f88791955be8da91c99dd21c7&quot;,
+    &quot;14506669676f330ca467a16a6342a4ca45a91977da3c2680e04f07848ad2b165&quot;,
+    &quot;8a180d1ea6312a557938476130936249861a04759498c36cfa7f9d5954d840de&quot;,
+    &quot;579ef69355aa02ac7c4d650839f7350aba356809115fc666065bac76fdc08e92&quot;,
+    &quot;0b9d40cd26e899daa9250f2b8beb77e803ac89eb2f06f55a1a0fad648856612f&quot;,
+    &quot;780a7e96204e9feacc105f6b73ae161db8884d2d845cdf64a23e8e49594a6e66&quot;,
+    &quot;c376c30b225ac5032f817404c0cc32e9df7be621c17fafa661c97610ff870c87&quot;,
+    &quot;499ac37a9f1f34fd9c7d71b70f6837332a234cd04b3307349eb3a72d028b4e41&quot;
+  ]
+}</code></pre>
+                </details>
+                <details>
+                    <summary>Canary Ground Truth Reconciliation</summary>
+                    <pre><code>{
+  &quot;derivation_paths&quot;: [
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/4&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/11&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/18&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/15&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/19&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/12&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/2&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/0&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/10&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/9&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/3&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/16&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/5&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/14&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/13&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/1&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/17&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/7&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/8&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/6&quot;
+  ],
+  &quot;addresses&quot;: [
+    &quot;bcrt1q0s33pvw4py36hz58cm3kayqt73nm4ykh98j2hg&quot;,
+    &quot;bcrt1qrhzskhttsuh5g8a2el9y8ymnsuypn8e90fryde&quot;,
+    &quot;bcrt1qdpujvddur3gtkc024wt9e49x9e6389vnuk2je5&quot;,
+    &quot;bcrt1qcp9reqdqshe29ncgy2cn0p84wlqnn393sjmnvz&quot;,
+    &quot;bcrt1qy48g09j9x9he2ne3y3ec8jqgcrwesecc5vwpzk&quot;,
+    &quot;bcrt1qsqzpv85yhejjcreej9s5qqjuadua5j0w3l47pl&quot;,
+    &quot;bcrt1qfszfwgq0pfgsjs2ft59ss6c786v8g7pcw45ce4&quot;,
+    &quot;bcrt1qr39u3rfhcggqt7lw02c35xw67q9ljra4pxrhsw&quot;,
+    &quot;bcrt1q7p930ww2pu67d57jg98day84vp5m44sx5dq0ua&quot;,
+    &quot;bcrt1qx0xnzfsrpwgjdnrhmr0xxhku03rsyjhmnqk0au&quot;,
+    &quot;bcrt1quvhp9p28ht0lmrhvp0zakkatge042j37aggjh6&quot;,
+    &quot;bcrt1qw00nzdyjllvuvjqw8dusung4v4ms87q0ju6xpg&quot;,
+    &quot;bcrt1qekh37hwx3h9yducsy70scyxkgcu55kjxh7ux4x&quot;,
+    &quot;bcrt1qwar9g0a2cny9muy57kl84fe3lcg96hpcdnqkwz&quot;,
+    &quot;bcrt1qq44mrmne5uqsjgrn7ep5lfeffxsm6u8pyu52eg&quot;,
+    &quot;bcrt1q4hgzzscdk5hm244ajvauxqwkfnsqnymdd3chfa&quot;,
+    &quot;bcrt1qk5w4vvry86r9ch5du5zrq5kxp29usdp6wx2c4f&quot;,
+    &quot;bcrt1q697y5tld5nqclsy0afqhesddhq0qkg9ckjg54v&quot;,
+    &quot;bcrt1qml49zu20ez2zv9ekn3ur802g9pfwze86fsw2py&quot;,
+    &quot;bcrt1q0a3zgqtu5rwn9mz3hg4gn650jj73nqjrqqgdml&quot;
+  ]
+}</code></pre>
+                </details>
+            </div>
+        </div>
+        
+
+        <div class="finding-card" style="border-left: 4px solid #3b82f6;">
+            <div class="finding-header">
+                <span class="badge" style="background: #3b82f6;">LOW</span>
+                <span class="rule-code">RULE-UNUSED-SCRIPT-PROBE</span>
+                <span class="finding-id">FIND-002</span>
+            </div>
+            <h3 class="finding-title">Unused Canary Script Probing (Gap Limit Exposure)</h3>
+            <p class="finding-desc">The wallet queried 18 canary addresses that never recorded transactions on-chain, exposing its gap-limit lookahead window to the backend indexer.</p>
+            
+            <div class="code-blocks">
+                <details>
+                    <summary>Observed Network Evidence</summary>
+                    <pre><code>{
+  &quot;count_unused_probed&quot;: 18,
+  &quot;sample_scripthashes&quot;: [
+    &quot;0f2af7f0b0b158de3f88c85e98fc9927e4c0d955748d5adddf6842260f3c650d&quot;,
+    &quot;43c1e226957bebecb376c5bf5ad931fb23fb399fc678afdcea440c91cd511a37&quot;,
+    &quot;ba58d9e28982393ecac009f726a14794b209fb8b8d1fb73150d43c54168edb85&quot;,
+    &quot;a351959cab7cc7c21fe90512bae8a431c403764af5d19a16722d6acd72e71975&quot;,
+    &quot;a3d33f0852f0b3871574241f54dd1c807db2805d28b5f3b4f48c1194ab09b228&quot;
+  ]
+}</code></pre>
+                </details>
+                <details>
+                    <summary>Canary Ground Truth Reconciliation</summary>
+                    <pre><code>{
+  &quot;sample_addresses&quot;: [
+    &quot;bcrt1q0s33pvw4py36hz58cm3kayqt73nm4ykh98j2hg&quot;,
+    &quot;bcrt1qrhzskhttsuh5g8a2el9y8ymnsuypn8e90fryde&quot;,
+    &quot;bcrt1qdpujvddur3gtkc024wt9e49x9e6389vnuk2je5&quot;,
+    &quot;bcrt1qcp9reqdqshe29ncgy2cn0p84wlqnn393sjmnvz&quot;,
+    &quot;bcrt1qy48g09j9x9he2ne3y3ec8jqgcrwesecc5vwpzk&quot;
+  ],
+  &quot;derivation_paths&quot;: [
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/4&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/11&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/18&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/15&quot;,
+    &quot;m/84&#x27;/1&#x27;/0&#x27;/0/19&quot;
+  ]
+}</code></pre>
+                </details>
+            </div>
+        </div>
+        
+
+        <div class="finding-card" style="border-left: 4px solid #f97316;">
+            <div class="finding-header">
+                <span class="badge" style="background: #f97316;">HIGH</span>
+                <span class="rule-code">RULE-BROADCAST-LINKAGE</span>
+                <span class="finding-id">FIND-003</span>
+            </div>
+            <h3 class="finding-title">Transaction Broadcast Co-located with Address Sync Session</h3>
+            <p class="finding-desc">The transaction was broadcast over TCP session [sess-09b47466], which was also used to query balance and history for 20 canary addresses, linking the payment originator directly to the wallet cluster.</p>
+            
+            <div class="code-blocks">
+                <details>
+                    <summary>Observed Network Evidence</summary>
+                    <pre><code>{
+  &quot;session_id&quot;: &quot;sess-09b47466&quot;,
+  &quot;associated_cluster_size&quot;: 20
+}</code></pre>
+                </details>
+                <details>
+                    <summary>Canary Ground Truth Reconciliation</summary>
+                    <pre><code>{
+  &quot;linked_addresses_sample&quot;: [
+    &quot;bcrt1q0s33pvw4py36hz58cm3kayqt73nm4ykh98j2hg&quot;,
+    &quot;bcrt1qrhzskhttsuh5g8a2el9y8ymnsuypn8e90fryde&quot;,
+    &quot;bcrt1qdpujvddur3gtkc024wt9e49x9e6389vnuk2je5&quot;,
+    &quot;bcrt1qcp9reqdqshe29ncgy2cn0p84wlqnn393sjmnvz&quot;,
+    &quot;bcrt1qy48g09j9x9he2ne3y3ec8jqgcrwesecc5vwpzk&quot;
+  ]
+}</code></pre>
+                </details>
+            </div>
+        </div>
+        
+        </section>
+
+        <footer>
+            Generated by Wallet Privacy Test Bench &bull; Formal System Traceability and Data Integrity
+        </footer>
+    </div>
+</body>
+</html>

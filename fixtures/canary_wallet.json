@@ -1,0 +1,294 @@
+{
+  "schema_version": "1.0.0",
+  "canary_id": "canary-bip84-regtest-001",
+  "network": "regtest",
+  "derivation_standard": "BIP84",
+  "account_descriptor": "wpkh([deadbeef/84'/1'/0']tpubDC5MmUKJHcW.../*)",
+  "gap_limit": 20,
+  "addresses": [
+    {
+      "index": 0,
+      "change": false,
+      "derivation_path": "m/84'/1'/0'/0/0",
+      "address": "bcrt1qr39u3rfhcggqt7lw02c35xw67q9ljra4pxrhsw",
+      "script_pubkey_hex": "00141c4bc88d37c21005fbee7ab11a19daf00bf90fb5",
+      "electrum_scripthash": "121bdc38b70b9b15126824aa2590697b414693f1a1cced6656c8038e987454a2",
+      "expected_status": "funded"
+    },
+    {
+      "index": 1,
+      "change": false,
+      "derivation_path": "m/84'/1'/0'/0/1",
+      "address": "bcrt1q4hgzzscdk5hm244ajvauxqwkfnsqnymdd3chfa",
+      "script_pubkey_hex": "0014add021430db52fb556bd933bc301d64ce009936d",
+      "electrum_scripthash": "579ef69355aa02ac7c4d650839f7350aba356809115fc666065bac76fdc08e92",
+      "expected_status": "funded"
+    },
+    {
+      "index": 2,
+      "change": false,
+      "derivation_path": "m/84'/1'/0'/0/2",
+      "address": "bcrt1qfszfwgq0pfgsjs2ft59ss6c786v8g7pcw45ce4",
+      "script_pubkey_hex": "00144c0497200f0a510941495d0b086b1e3e98747838",
+      "electrum_scripthash": "3af08a575d8f3e90b2ad48baceac87be68441589c5a7eb8499e4e58da5459a28",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 3,
+      "change": false,
+      "derivation_path": "m/84'/1'/0'/0/3",
+      "address": "bcrt1quvhp9p28ht0lmrhvp0zakkatge042j37aggjh6",
+      "script_pubkey_hex": "0014e32e128547badffd8eec0bc5db5bab465f554a3e",
+      "electrum_scripthash": "4b07d8ca1002458ab14a1073acc928cf64f39376037776511af95702a4ce2aa0",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 4,
+      "change": false,
+      "derivation_path": "m/84'/1'/0'/0/4",
+      "address": "bcrt1q0s33pvw4py36hz58cm3kayqt73nm4ykh98j2hg",
+      "script_pubkey_hex": "00147c2310b1d50923ab8a87c6e36e900bf467ba92d7",
+      "electrum_scripthash": "0f2af7f0b0b158de3f88c85e98fc9927e4c0d955748d5adddf6842260f3c650d",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 5,
+      "change": false,
+      "derivation_path": "m/84'/1'/0'/0/5",
+      "address": "bcrt1qekh37hwx3h9yducsy70scyxkgcu55kjxh7ux4x",
+      "script_pubkey_hex": "0014cdaf1f5dc68dca46f310279f0c10d646394a5a46",
+      "electrum_scripthash": "6463aad08fa17c88319f96dd32637cb942950c5f88791955be8da91c99dd21c7",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 6,
+      "change": false,
+      "derivation_path": "m/84'/1'/0'/0/6",
+      "address": "bcrt1q0a3zgqtu5rwn9mz3hg4gn650jj73nqjrqqgdml",
+      "script_pubkey_hex": "00147f6224017ca0dd32ec51ba2a89ea8f94bd198243",
+      "electrum_scripthash": "499ac37a9f1f34fd9c7d71b70f6837332a234cd04b3307349eb3a72d028b4e41",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 7,
+      "change": false,
+      "derivation_path": "m/84'/1'/0'/0/7",
+      "address": "bcrt1q697y5tld5nqclsy0afqhesddhq0qkg9ckjg54v",
+      "script_pubkey_hex": "0014d17c4a2feda4c18fc08fea417cc1adb81e0b20b8",
+      "electrum_scripthash": "780a7e96204e9feacc105f6b73ae161db8884d2d845cdf64a23e8e49594a6e66",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 8,
+      "change": false,
+      "derivation_path": "m/84'/1'/0'/0/8",
+      "address": "bcrt1qml49zu20ez2zv9ekn3ur802g9pfwze86fsw2py",
+      "script_pubkey_hex": "0014dfea51714fc8942617369c7833bd482852e164fa",
+      "electrum_scripthash": "c376c30b225ac5032f817404c0cc32e9df7be621c17fafa661c97610ff870c87",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 9,
+      "change": false,
+      "derivation_path": "m/84'/1'/0'/0/9",
+      "address": "bcrt1qx0xnzfsrpwgjdnrhmr0xxhku03rsyjhmnqk0au",
+      "script_pubkey_hex": "001433cd3126030b9126cc77d8de635edc7c47024afb",
+      "electrum_scripthash": "cf79ac02079f991f62013a70705027afaf0ba369ec93c4511c4de2986dc49ffd",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 10,
+      "change": false,
+      "derivation_path": "m/84'/1'/0'/0/10",
+      "address": "bcrt1q7p930ww2pu67d57jg98day84vp5m44sx5dq0ua",
+      "script_pubkey_hex": "0014f04b17b9ca0f35e6d3d2414ede90f56069bad606",
+      "electrum_scripthash": "d90497e915485f851d5f32dcf55bc92e579cc647897f9942a4ddd8f59bf8f3d2",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 11,
+      "change": false,
+      "derivation_path": "m/84'/1'/0'/0/11",
+      "address": "bcrt1qrhzskhttsuh5g8a2el9y8ymnsuypn8e90fryde",
+      "script_pubkey_hex": "00141dc50b5d6b872f441faacfca4393738708199f25",
+      "electrum_scripthash": "43c1e226957bebecb376c5bf5ad931fb23fb399fc678afdcea440c91cd511a37",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 12,
+      "change": false,
+      "derivation_path": "m/84'/1'/0'/0/12",
+      "address": "bcrt1qsqzpv85yhejjcreej9s5qqjuadua5j0w3l47pl",
+      "script_pubkey_hex": "00148004161e84be652c0f39916140025ceb79da49ee",
+      "electrum_scripthash": "5608474d88b06f43e8fff1bc06bf2b5c98389878e944f9de7b94c95b594dada0",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 13,
+      "change": false,
+      "derivation_path": "m/84'/1'/0'/0/13",
+      "address": "bcrt1qq44mrmne5uqsjgrn7ep5lfeffxsm6u8pyu52eg",
+      "script_pubkey_hex": "0014056bb1ee79a701092073f6434fa72949a1bd70e1",
+      "electrum_scripthash": "8a180d1ea6312a557938476130936249861a04759498c36cfa7f9d5954d840de",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 14,
+      "change": false,
+      "derivation_path": "m/84'/1'/0'/0/14",
+      "address": "bcrt1qwar9g0a2cny9muy57kl84fe3lcg96hpcdnqkwz",
+      "script_pubkey_hex": "00147746543faac4c85df094f5be7aa731fe105d5c38",
+      "electrum_scripthash": "14506669676f330ca467a16a6342a4ca45a91977da3c2680e04f07848ad2b165",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 15,
+      "change": false,
+      "derivation_path": "m/84'/1'/0'/0/15",
+      "address": "bcrt1qcp9reqdqshe29ncgy2cn0p84wlqnn393sjmnvz",
+      "script_pubkey_hex": "0014c04a3c81a085f2a2cf0822b13784f577c139c4b1",
+      "electrum_scripthash": "a351959cab7cc7c21fe90512bae8a431c403764af5d19a16722d6acd72e71975",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 16,
+      "change": false,
+      "derivation_path": "m/84'/1'/0'/0/16",
+      "address": "bcrt1qw00nzdyjllvuvjqw8dusung4v4ms87q0ju6xpg",
+      "script_pubkey_hex": "001473df313492ffd9c6480e3b790e4d15657703f80f",
+      "electrum_scripthash": "4e0fd4bc35430e87473212aff95dd73e38e74de191eeba2aa119297e43473cd8",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 17,
+      "change": false,
+      "derivation_path": "m/84'/1'/0'/0/17",
+      "address": "bcrt1qk5w4vvry86r9ch5du5zrq5kxp29usdp6wx2c4f",
+      "script_pubkey_hex": "0014b51d5630643e865c5e8de5043052c60a8bc8343a",
+      "electrum_scripthash": "0b9d40cd26e899daa9250f2b8beb77e803ac89eb2f06f55a1a0fad648856612f",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 18,
+      "change": false,
+      "derivation_path": "m/84'/1'/0'/0/18",
+      "address": "bcrt1qdpujvddur3gtkc024wt9e49x9e6389vnuk2je5",
+      "script_pubkey_hex": "001468792635bc1c50bb61eaab965cd4a62e75139593",
+      "electrum_scripthash": "ba58d9e28982393ecac009f726a14794b209fb8b8d1fb73150d43c54168edb85",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 19,
+      "change": false,
+      "derivation_path": "m/84'/1'/0'/0/19",
+      "address": "bcrt1qy48g09j9x9he2ne3y3ec8jqgcrwesecc5vwpzk",
+      "script_pubkey_hex": "0014254e879645316f954f31247383c808c0dd986718",
+      "electrum_scripthash": "a3d33f0852f0b3871574241f54dd1c807db2805d28b5f3b4f48c1194ab09b228",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 0,
+      "change": true,
+      "derivation_path": "m/84'/1'/0'/1/0",
+      "address": "bcrt1q06tmwgmzacejacf3qsjmg3uhvr254sxnf28pye",
+      "script_pubkey_hex": "00147e97b72362ee332ee1310425b4479760d54ac0d3",
+      "electrum_scripthash": "41a5b175bc65019711aeec2997720d43c3674ba62c9b2339f99a1e2b711ec4d2",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 1,
+      "change": true,
+      "derivation_path": "m/84'/1'/0'/1/1",
+      "address": "bcrt1qx2mhgeptl28lflnegre9agkndhqqyrfqwxuw33",
+      "script_pubkey_hex": "001432b774642bfa8ff4fe7940f25ea2d36dc0020d20",
+      "electrum_scripthash": "d96ce89508e1780e40e47ad426f9c05bc8f18c96747f28754c1abe79ee5525eb",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 2,
+      "change": true,
+      "derivation_path": "m/84'/1'/0'/1/2",
+      "address": "bcrt1qvtkahk9ky82xw92w3gsjqlmg34nqyt8hyexkyl",
+      "script_pubkey_hex": "001462eddbd8b621d467154e8a21207f688d66022cf7",
+      "electrum_scripthash": "15d9c2a97f8e4fdbb6ef70f1e0090a7dd60813281bb84aee68ec7fca82d9e749",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 3,
+      "change": true,
+      "derivation_path": "m/84'/1'/0'/1/3",
+      "address": "bcrt1qcytrfy827mw6gn9xnfk7r3vvzxwhkp7mmvmrcq",
+      "script_pubkey_hex": "0014c1163490eaf6dda44ca69a6de1c58c119d7b07db",
+      "electrum_scripthash": "b2225c8b4ac2cb4b8dd20eee78b0be96d875c59881065ad7f58cb17f63cecb16",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 4,
+      "change": true,
+      "derivation_path": "m/84'/1'/0'/1/4",
+      "address": "bcrt1qfuvw602k43y4jr69aev98ehf4q5m73wcfh4hzw",
+      "script_pubkey_hex": "00144f18ed3d56ac49590f45ee5853e6e9a829bf45d8",
+      "electrum_scripthash": "01e944fb36cfaeede9011616c3257c3c47c3e13c00597750a5277b209ef220e7",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 5,
+      "change": true,
+      "derivation_path": "m/84'/1'/0'/1/5",
+      "address": "bcrt1q46y7ev4xczjhjgcfnh07k4w838ktyzr74e44af",
+      "script_pubkey_hex": "0014ae89ecb2a6c0a57923099ddfeb55c789ecb2087e",
+      "electrum_scripthash": "11a8845e2f4f56c668923cb88ddbc75cda36b2409cca076501472aeb45808102",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 6,
+      "change": true,
+      "derivation_path": "m/84'/1'/0'/1/6",
+      "address": "bcrt1qlp52ustqeweh58ytyukfujdjdnf0ptpury23gy",
+      "script_pubkey_hex": "0014f868ae4160cbb37a1c8b272c9e49b26cd2f0ac3c",
+      "electrum_scripthash": "c25d6b1e77e98ad8dcd3e9018a4582ba7db00ec6c11dcbd1b9726cd8140702d5",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 7,
+      "change": true,
+      "derivation_path": "m/84'/1'/0'/1/7",
+      "address": "bcrt1q4dg2285r4vefqa2m99f7x9xfs6nmcgg3wheyqy",
+      "script_pubkey_hex": "0014ab50a51e83ab3290755b2953e314c986a7bc2111",
+      "electrum_scripthash": "8f83e0aac56ba88c650a92cb741300f1341df1a695f918657d1ab30db45caca1",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 8,
+      "change": true,
+      "derivation_path": "m/84'/1'/0'/1/8",
+      "address": "bcrt1qcta95r6wt6n4kmg7hvtnur587pefmmlpra4pp9",
+      "script_pubkey_hex": "0014c2fa5a0f4e5ea75b6d1ebb173e0e87f0729defe1",
+      "electrum_scripthash": "e084a8205ca5b7c9688a343a532536360427e8eb66c36da15a365798341a44db",
+      "expected_status": "unfunded"
+    },
+    {
+      "index": 9,
+      "change": true,
+      "derivation_path": "m/84'/1'/0'/1/9",
+      "address": "bcrt1qqe7lztrc4366qaladsr2s0k6gdt5dvz63yhkak",
+      "script_pubkey_hex": "0014067df12c78ac75a077fd6c06a83eda435746b05a",
+      "electrum_scripthash": "c44ce980cca0409e0a049d0597ee05a3055136d59fbb61a6b427cc4e4d07fe16",
+      "expected_status": "unfunded"
+    }
+  ],
+  "known_utxos": [
+    {
+      "txid": "a1b2c3d4e5f60718293a4b5c6d7e8f90123456789abcdef0123456789abcdef0",
+      "vout": 0,
+      "amount_sat": 50000000,
+      "address": "bcrt1qr39u3rfhcggqt7lw02c35xw67q9ljra4pxrhsw"
+    },
+    {
+      "txid": "f0e1d2c3b4a5968778695a4b3c2d1e0f0987654321fedcba0987654321fedcba",
+      "vout": 1,
+      "amount_sat": 25000000,
+      "address": "bcrt1q4hgzzscdk5hm244ajvauxqwkfnsqnymdd3chfa"
+    }
+  ]
+}

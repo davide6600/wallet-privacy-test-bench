@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GroundTruthCanarySchema",
+  "description": "Schema formale per la rappresentazione dello stato deterministico noto a priori del wallet canary di test.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "canary_id",
+    "network",
+    "derivation_standard",
+    "account_descriptor",
+    "addresses",
+    "known_utxos"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": ["1.0.0"]
+    },
+    "canary_id": {
+      "type": "string",
+      "description": "Identificativo univoco della suite di test canary."
+    },
+    "network": {
+      "type": "string",
+      "enum": ["regtest"]
+    },
+    "derivation_standard": {
+      "type": "string",
+      "enum": ["BIP84", "BIP44", "BIP49"]
+    },
+    "account_descriptor": {
+      "type": "string",
+      "description": "Descrittore di output standard (es. wpkh(tprv.../84'/1'/0'/*))"
+    },
+    "gap_limit": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 20
+    },
+    "addresses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "index",
+          "change",
+          "derivation_path",
+          "address",
+          "script_pubkey_hex",
+          "electrum_scripthash"
+        ],
+        "properties": {
+          "index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "change": {
+            "type": "boolean",
+            "description": "false per ricezione (0), true per cambio interno (1)"
+          },
+          "derivation_path": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "script_pubkey_hex": {
+            "type": "string",
+            "pattern": "^[0-9a-fA-F]+$"
+          },
+          "electrum_scripthash": {
+            "type": "string",
+            "pattern": "^[0-9a-fA-F]{64}$",
+            "description": "SHA256 inverso little-endian dello scriptPubKey"
+          },
+          "expected_status": {
+            "type": "string",
+            "enum": ["funded", "unfunded", "spent"],
+            "default": "unfunded"
+          }
+        }
+      }
+    },
+    "known_utxos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["txid", "vout", "amount_sat", "address"],
+        "properties": {
+          "txid": {
+            "type": "string",
+            "pattern": "^[0-9a-fA-F]{64}$"
+          },
+          "vout": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "amount_sat": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "address": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+# electrs configuration for Wallet Privacy Test Bench
+network = "regtest"
+daemon_dir = "/data/bitcoind/regtest"
+daemon_rpc_addr = "bitcoind:18443"
+daemon_p2p_addr = "bitcoind:18444"
+electrum_rpc_addr = "0.0.0.0:60401"
+log_filters = "INFO"
+db_dir = "/data/electrs/db"
+index_batch_size = 100
+wait_duration_secs = 1
+jsonrpc_import = true

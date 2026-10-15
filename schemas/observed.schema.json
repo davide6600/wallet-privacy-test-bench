@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ObservedEventSchema",
+  "description": "Schema per ciascun evento di rete intercettato dal proxy osservatore.",
+  "type": "object",
+  "required": [
+    "timestamp_iso",
+    "observer_id",
+    "protocol",
+    "session_id",
+    "direction",
+    "method",
+    "params"
+  ],
+  "properties": {
+    "timestamp_iso": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "observer_id": {
+      "type": "string",
+      "description": "Identificativo dell'osservatore (es. observer-electrum-rpc-50001)"
+    },
+    "protocol": {
+      "type": "string",
+      "enum": ["electrum-jsonrpc", "esplora-http", "p2p-tcp", "dns"]
+    },
+    "session_id": {
+      "type": "string",
+      "description": "Identificativo univoco della connessione socket client"
+    },
+    "client_ip": {
+      "type": "string"
+    },
+    "client_port": {
+      "type": "integer"
+    },
+    "direction": {
+      "type": "string",
+      "enum": ["request", "response"]
+    },
+    "rpc_id": {
+      "type": ["string", "integer", "null"]
+    },
+    "method": {
+      "type": "string",
+      "description": "Nome del metodo RPC (es. blockchain.scripthash.subscribe)"
+    },
+    "params": {
+      "type": "array",
+      "description": "Parametri grezzi passati alla chiamata RPC"
+    },
+    "scripthash": {
+      "type": "string",
+      "description": "Se applicabile, lo scripthash estratto dai parametri"
+    },
+    "raw_payload_size_bytes": {
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}

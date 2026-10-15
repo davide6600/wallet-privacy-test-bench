@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PrivacyFindingsSchema",
+  "description": "Schema per i finding prodotti dall'Oracolo di Privacy Riconciliata.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "test_run_id",
+    "scenario_name",
+    "wallet_name",
+    "wallet_version",
+    "verdict",
+    "metrics",
+    "findings"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": ["1.0.0"]
+    },
+    "test_run_id": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "scenario_name": {
+      "type": "string"
+    },
+    "wallet_name": {
+      "type": "string"
+    },
+    "wallet_version": {
+      "type": "string"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": ["PASS", "FAIL", "BASELINE_OBSERVATION"]
+    },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "total_canary_scripts",
+        "observed_canary_scripts",
+        "script_disclosure_ratio",
+        "distinct_sessions_count",
+        "cluster_size_max"
+      ],
+      "properties": {
+        "total_canary_scripts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "observed_canary_scripts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "script_disclosure_ratio": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "distinct_sessions_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "cluster_size_max": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "finding_id",
+          "rule_code",
+          "severity",
+          "title",
+          "description",
+          "evidence",
+          "reconciled_ground_truth"
+        ],
+        "properties": {
+          "finding_id": {
+            "type": "string"
+          },
+          "rule_code": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["INFO", "LOW", "MEDIUM", "HIGH", "CRITICAL"]
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "object"
+          },
+          "reconciled_ground_truth": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

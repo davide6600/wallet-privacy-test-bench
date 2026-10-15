@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "test_run_id": "run-ffb404f4",
+  "executed_at": "2026-10-15T13:53:47.397741+00:00",
+  "harness_git_commit": "4afa430e7a058b06f762845a37814c3d9dfa7a76",
+  "harness_clean_worktree": false,
+  "tested_artifact": {
+    "name": "Electrum-Protocol-Client",
+    "version": "4.5.x",
+    "binary_path": "adapters/electrum.py",
+    "binary_sha256": "ca57f9dd3416687348f9d8d07fd1cc3fc9eded7af69e809120084ea8a9ff802d",
+    "source_repository": "https://github.com/spesmilo/electrum"
+  },
+  "environment": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.13.4",
+    "docker_version": "Docker Desktop WSL2 available"
+  },
+  "output_hashes": {
+    "ground_truth_sha256": "bbdb944888431e495fd9bb8725ef5e22452541befbc785cccafc361d5f60b846",
+    "observed_events_sha256": "b37d39f5de891f8538425bdf79c05f99773c7168d237eddcabb57f6bcb4772c0",
+    "findings_sha256": "fbcd4b5e71ee617a7965da93ecfd4e906c8e371d27d902d26a9452bf62e0c14a"
+  }
+}

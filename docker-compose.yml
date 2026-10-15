@@ -1,0 +1,54 @@
+services:
+  bitcoind:
+    image: ruimarinho/bitcoin-core:26.0
+    container_name: bench_bitcoind
+    restart: unless-stopped
+    command:
+      - -conf=/etc/bitcoin/bitcoin.conf
+      - -datadir=/data/bitcoind
+    volumes:
+      - ./docker/bitcoind/bitcoin.conf:/etc/bitcoin/bitcoin.conf:ro
+      - bitcoind_data:/data/bitcoind
+    ports:
+      - "18443:18443"
+      - "18444:18444"
+      - "28332:28332"
+      - "28333:28333"
+
+  electrs:
+    image: getumbrel/electrs:v0.10.4
+    container_name: bench_electrs
+    restart: unless-stopped
+    depends_on:
+      - bitcoind
+    command:
+      - electrs
+      - --conf=/etc/electrs/electrs.toml
+    volumes:
+      - ./docker/electrs/electrs.toml:/etc/electrs/electrs.toml:ro
+      - bitcoind_data:/data/bitcoind:ro
+      - electrs_data:/data/electrs
+    ports:
+      - "60401:60401"
+
+  observer-proxy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bench_observer_proxy
+    restart: unless-stopped
+    depends_on:
+      - electrs
+    environment:
+      - BACKEND_HOST=electrs
+      - BACKEND_PORT=60401
+      - LISTEN_PORT=50001
+      - LOG_FILE=/app/artifacts/observed.jsonl
+    volumes:
+      - ./artifacts:/app/artifacts
+    ports:
+      - "50001:50001"
+
+volumes:
+  bitcoind_data:
+  electrs_data:
